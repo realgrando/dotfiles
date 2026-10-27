@@ -1,0 +1,3 @@
+#!/bin/bash
+grim -g "$(slurp)" - | wl-copy
+notify-send "Screenshot" "Region copied to clipboard!"

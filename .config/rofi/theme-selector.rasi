@@ -1,0 +1,83 @@
+* {
+    font: "JetBrainsMono Nerd Font 14";
+    background-color: transparent;
+    text-color: #c0caf5;
+}
+
+window {
+    width: 100%;
+    height: 350px;
+    location: south;
+    anchor: south;
+    background-color: rgba(26, 27, 38, 0.9);
+    border: 2px 0 0 0;
+    border-color: #7aa2f7;
+    padding: 10px 40px;
+}
+
+mainbox {
+    orientation: horizontal;
+    spacing: 30px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    orientation: vertical;
+    width: 250px;
+    spacing: 15px;
+    children: [ prompt, entry ];
+    padding: 20px;
+    background-color: rgba(41, 46, 66, 0.8);
+    border-radius: 12px;
+}
+
+prompt {
+    text-color: #7dcfff;
+    font: "JetBrainsMono Nerd Font bold 18";
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Search theme...";
+    placeholder-color: #565f89;
+    text-color: #c0caf5;
+}
+
+listview {
+    layout: horizontal;
+    spacing: 30px;
+    lines: 5;
+    fixed-height: false;
+    fixed-columns: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 10px;
+    width: 240px;
+    border-radius: 12px;
+    background-color: rgba(41, 46, 66, 0.5);
+}
+
+element-icon {
+    size: 200px;
+    border-radius: 8px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    margin: 10px 0 0 0;
+    font: "JetBrainsMono Nerd Font bold 14";
+    text-color: #c0caf5;
+}
+
+element selected {
+    background-color: rgba(122, 162, 247, 0.2);
+    border: 2px;
+    border-color: #7aa2f7;
+}
+
+element-text selected {
+    text-color: #7dcfff;
+}

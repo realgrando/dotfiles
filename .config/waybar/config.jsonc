@@ -1,0 +1,94 @@
+{
+    "layer": "top",
+    "ipc": true,
+    "position": "top",
+    "exclusive": true,
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "cpu",
+        "memory",
+        "temperature",
+        "clock"
+    ],
+    "modules-right": [
+        "network",
+        "pulseaudio",
+        "battery",
+        "tray"
+    ],
+    "custom/arch": {
+        "format": " \uf303 ",
+        "tooltip": false
+    },
+    "hyprland/window": {
+        "format": ">_ {title}",
+        "max-length": 45
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "default": "\u25cb"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "CPU: {usage}% \uf2db",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 1,
+        "format": "RAM: {percentage}% \uf0c9",
+        "tooltip": false
+    },
+    "temperature": {
+        "interval": 2,
+        "format": "{temperatureC}\u00b0C \uf2c9"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "{bandwidthDownBytes} \uf0ab ",
+        "format-ethernet": "{bandwidthDownBytes} \uf0ab ",
+        "format-disconnected": "Offline \u26a0",
+        "tooltip-format": "{ifname} via {gwaddr} \uf796"
+    },
+    "pulseaudio": {
+        "format": "{volume}% \uf028",
+        "format-muted": "Muted \uf026"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "\uf244",
+            "\uf243",
+            "\uf242",
+            "\uf241",
+            "\uf240"
+        ]
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 8
+    }
+}

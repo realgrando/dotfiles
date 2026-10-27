@@ -1,0 +1,45 @@
+#!/bin/bash
+
+WALL_DIR="/home/asce/Pictures/Wallpapers"
+
+# We format for rofi: "ThemeName\0icon\x1f/path/to/image.jpg"
+options="Cyber Tech\0icon\x1f$WALL_DIR/cyber_tech.jpg\nCatholic Aesthetic\0icon\x1f$WALL_DIR/catholic_aesthetic.jpg"
+
+choice=$(echo -e "$options" | rofi -dmenu -i -theme ~/.config/rofi/theme-selector.rasi -p "Aesthetic:")
+
+if [ -z "$choice" ]; then
+    exit 0
+fi
+
+if [ "$choice" = "Cyber Tech" ]; then
+    theme="cyber"
+    wall="cyber_tech.jpg"
+elif [ "$choice" = "Catholic Aesthetic" ]; then
+    theme="catholic"
+    wall="catholic_aesthetic.jpg"
+fi
+
+echo "Applying theme: $theme"
+
+# 1. Hyprland
+cp ~/.config/hypr/themes/${theme}.lua ~/.config/hypr/theme.lua
+hyprctl reload
+
+# 2. Kitty
+cp ~/.config/kitty/themes/${theme}.conf ~/.config/kitty/theme.conf
+killall -SIGUSR1 kitty
+
+# 3. Waybar
+cp ~/.config/waybar/themes/${theme}.css ~/.config/waybar/colors.css
+killall waybar
+nohup waybar > /dev/null 2>&1 &
+
+# 4. Wallpaper (Using awww for transitions)
+if command -v awww >/dev/null 2>&1; then
+    # Ensure daemon is running
+    if ! pgrep -x "awww-daemon" > /dev/null; then
+        awww-daemon &
+        sleep 1
+    fi
+    awww img "$WALL_DIR/$wall" --transition-type wipe --transition-duration 1.5 --transition-fps 60
+fi

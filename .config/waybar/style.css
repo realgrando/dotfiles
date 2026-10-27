@@ -1,0 +1,100 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", "Fira Code", monospace;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: #050505;
+    border-bottom: 1px solid rgba(255, 0, 60, 0.2);
+}
+
+window#waybar > box {
+    padding: 0;
+}
+
+/* O MEIO: A Central de Comando Tech/Cyberpunk */
+.modules-center {
+    background-color: #0a0a0a;
+    border-left: 2px solid #ff003c;
+    border-right: 2px solid #ff003c;
+    border-bottom: 2px solid #ff003c;
+    border-radius: 0 0 15px 15px; 
+    box-shadow: 0px 4px 15px rgba(255, 0, 60, 0.4);
+    padding: 0px 10px;
+}
+
+#cpu, #memory, #temperature {
+    color: #ff003c;
+    padding: 0 12px;
+    border-right: 1px solid rgba(255, 0, 60, 0.3); /* Linhas separadoras internas */
+    margin: 4px 0; /* Impede a linha de encostar no teto/chão */
+}
+
+#clock {
+    color: #ff003c;
+    padding: 0 12px;
+    font-size: 12px;
+    text-shadow: 0px 0px 5px rgba(255, 0, 60, 0.6); /* Brilho no relógio */
+}
+
+/* LADOS DA BARRA */
+.modules-left, .modules-right {
+    padding: 0px 10px;
+}
+
+/* LEFT */
+#custom-arch {
+    color: #ff003c;
+    font-size: 15px;
+    padding-right: 12px;
+    text-shadow: 0px 0px 8px rgba(255, 0, 60, 0.8);
+}
+
+#workspaces button {
+    color: #aa0022;
+    background: transparent;
+    padding: 0 6px;
+    border-radius: 0px;
+}
+
+#workspaces button:hover {
+    color: #ff003c;
+    background: rgba(255, 0, 60, 0.1);
+}
+
+#workspaces button.active {
+    color: #ff003c;
+    border-bottom: 2px solid #ff003c;
+    text-shadow: 0px 0px 5px rgba(255, 0, 60, 0.8); /* Brilho neon no workspace ativo */
+}
+
+#window {
+    color: rgba(255, 255, 255, 0.5);
+    padding-left: 15px;
+    font-style: italic;
+}
+
+/* RIGHT */
+#network, #pulseaudio, #battery, #tray {
+    color: #ff003c;
+    padding: 0 8px;
+}
+
+/* Velocidade de rede em tom Ciano/Neon para contraste hacker */
+#network {
+    color: #00ffcc;
+    text-shadow: 0px 0px 5px rgba(0, 255, 204, 0.4);
+    border-right: 1px solid rgba(255, 0, 60, 0.2);
+    margin: 4px 0;
+    padding-right: 12px;
+}
+
+#battery.warning {
+    color: #ffaa00;
+}
+
+#battery.critical {
+    color: #ffffff;
+    background-color: #ff0000;
+}

@@ -1,0 +1,86 @@
+configuration {
+    show-icons: true;
+    display-drun: "🔍";
+    display-combi: "🔍";
+    drun-display-format: "{name}";
+}
+
+* {
+    font: "JetBrainsMono Nerd Font 13";
+    bg0:  #151515;
+    bg1:  #1A1A1A;
+    bg2:  #2B2B2B;
+    fg0:  #FFFFFF;
+    fg1:  #888888;
+    accent: #FFFFFF;
+    
+    background-color: transparent;
+    text-color: @fg0;
+    margin: 0;
+    padding: 0;
+}
+
+window {
+    background-color: @bg0;
+    border: 1px;
+    border-color: #333333;
+    border-radius: 12px;
+    width: 750px;
+}
+
+mainbox {
+    spacing: 0px;
+}
+
+inputbar {
+    background-color: @bg0;
+    padding: 18px 20px;
+    spacing: 15px;
+    children: [ prompt, entry ];
+    border-bottom: 1px;
+    border-color: #2A2A2A;
+}
+
+prompt {
+    text-color: @fg1;
+    font: "JetBrainsMono Nerd Font 16";
+}
+
+entry {
+    placeholder: "Search for apps, files, or web...";
+    placeholder-color: @fg1;
+    text-color: @fg0;
+    vertical-align: 0.5;
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    spacing: 0px;
+    scrollbar: false;
+    padding: 10px;
+}
+
+element {
+    padding: 12px 15px;
+    border-radius: 8px;
+    spacing: 15px;
+}
+
+element normal normal, element alternate normal {
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @bg2;
+    text-color: @fg0;
+}
+
+element-icon {
+    size: 24px;
+}
+
+element-text {
+    vertical-align: 0.5;
+    highlight: bold #FFFFFF;
+}

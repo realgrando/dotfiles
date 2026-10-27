@@ -1,0 +1,18 @@
+#!/bin/bash
+if [[ "$TERM" == *"kitty"* ]]; then
+    clear
+    # Save cursor position at the top
+    echo -en "\e[s"
+    
+    # Print the image, height constrained to 15 rows
+    kitty +kitten icat --align left --height 15 ~/.config/fastfetch/arch_animated.gif
+    
+    # Restore cursor position back to the top
+    echo -en "\e[u"
+    
+    # Print blank padding so fastfetch text starts to the right of the image
+    printf '\n%.0s' {1..14} > ~/.config/fastfetch/blank.txt
+    fastfetch --logo ~/.config/fastfetch/blank.txt --logo-type file --logo-padding-right 22 --color red
+else
+    fastfetch -l arch --logo-color-1 red --color red
+fi

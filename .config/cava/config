@@ -1,0 +1,24 @@
+[general]
+framerate = 60
+autosens = 1
+bars = 0
+bar_width = 2
+bar_spacing = 1
+
+[color]
+gradient = 1
+gradient_count = 8
+gradient_color_1 = '#9ece6a'
+gradient_color_2 = '#e0af68'
+gradient_color_3 = '#7aa2f7'
+gradient_color_4 = '#bb9af7'
+gradient_color_5 = '#7dcfff'
+gradient_color_6 = '#c0caf5'
+gradient_color_7 = '#f7768e'
+gradient_color_8 = '#ff9e64'
+
+[smoothing]
+integral = 77
+monstercat = 1
+gravity = 100
+ignore = 0

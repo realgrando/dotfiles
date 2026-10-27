@@ -1,10 +1,47 @@
-# 🕷️ Arch Linux Rice & Dotfiles
+# 🕷️ Dotfiles & Configurations
 
-Personal dotfiles and configuration for Arch Linux with a modular **Hyprland (Lua)** setup, **Waybar**, **Starship**, **Rofi**, **Kitty**, and custom themes.
+Personal dotfiles and environment configurations across multiple machines, including the Arch Linux Hyprland rice.
 
 ---
 
-## 🎨 Overview & Aesthetic
+## 📂 Repository Structure
+
+```
+dotfiles/
+├── arch_linux/             # Arch Linux Rice & Environment
+│   ├── .config/
+│   │   ├── hypr/           # Hyprland modular Lua config
+│   │   │   ├── hyprland.lua
+│   │   │   ├── theme.lua
+│   │   │   ├── hyprpaper.conf
+│   │   │   └── modules/    # Keybindings, autostart, look & feel, monitors, etc.
+│   │   ├── waybar/         # Waybar styling, modules, and auto-hide scripts
+│   │   ├── rofi/           # Rofi spotlight/raycast themes and web search script
+│   │   ├── kitty/          # Kitty terminal configuration & color schemes
+│   │   ├── fastfetch/      # Fastfetch config and Spidey ASCII animation frames
+│   │   ├── starship.toml   # Starship prompt configuration
+│   │   ├── cava/           # Cava audio visualizer configuration and shaders
+│   │   ├── btop/           # Btop resource monitor configuration
+│   │   └── vicinae/        # Vicinae launcher settings
+│   ├── .local/bin/         # Custom desktop & rice utility scripts
+│   │   ├── cava-float      # Floating cava audio visualizer
+│   │   ├── fetch-animated  # Animated fastfetch runner
+│   │   ├── hypr-move       # Hyprland window mover helper
+│   │   ├── hypr-resize     # Hyprland window resizer helper
+│   │   ├── screenshot-full.sh   # Fullscreen screenshot to clipboard
+│   │   ├── screenshot-region.sh # Region screenshot to clipboard
+│   │   ├── start-lan-mouse.sh   # LAN mouse daemon starter
+│   │   └── theme-switcher  # Dynamic aesthetic / theme switcher
+│   ├── Pictures/Wallpapers/# Wallpapers used in this rice
+│   ├── .bashrc             # Bash aliases and environment
+│   ├── .bash_profile       # Bash profile
+│   └── .zshrc              # Zsh plugins and prompt setup
+└── vscode-settings.json    # VS Code workspace settings
+```
+
+---
+
+## 🎨 Arch Linux Rice Overview
 
 - **OS:** Arch Linux
 - **Window Manager / Compositor:** Hyprland (Modular Lua Configuration)
@@ -18,43 +55,6 @@ Personal dotfiles and configuration for Arch Linux with a modular **Hyprland (Lu
 - **Audio Visualizer:** Cava
 - **Screenshots:** Grim + Slurp + wl-copy
 - **Wallpaper Engine:** Awww / Hyprpaper
-
----
-
-## 📂 Repository Structure
-
-```
-dotfiles/
-├── .config/
-│   ├── hypr/               # Hyprland modular Lua config
-│   │   ├── hyprland.lua
-│   │   ├── theme.lua
-│   │   ├── hyprpaper.conf
-│   │   ├── modules/        # Keybindings, autostart, look & feel, monitors, etc.
-│   │   └── .vscode/
-│   ├── waybar/             # Waybar styling, modules, and auto-hide scripts
-│   ├── rofi/               # Rofi spotlight/raycast themes and web search script
-│   ├── kitty/              # Kitty terminal configuration & color schemes
-│   ├── fastfetch/          # Fastfetch config and Spidey ASCII animation frames
-│   ├── starship.toml       # Starship prompt configuration
-│   ├── cava/               # Cava audio visualizer configuration and shaders
-│   ├── btop/               # Btop resource monitor configuration
-│   └── vicinae/            # Vicinae launcher settings
-├── .local/bin/             # Custom desktop & rice utility scripts
-│   ├── cava-float          # Floating cava audio visualizer
-│   ├── fetch-animated      # Animated fastfetch runner
-│   ├── hypr-move           # Hyprland window mover helper
-│   ├── hypr-resize         # Hyprland window resizer helper
-│   ├── screenshot-full.sh  # Fullscreen screenshot to clipboard
-│   ├── screenshot-region.sh# Region screenshot to clipboard
-│   ├── start-lan-mouse.sh  # LAN mouse daemon starter
-│   └── theme-switcher      # Dynamic aesthetic / theme switcher
-├── Pictures/Wallpapers/    # Wallpapers used in this rice
-├── .bashrc                 # Bash aliases and environment
-├── .bash_profile           # Bash profile
-├── .zshrc                  # Zsh plugins and prompt setup
-└── vscode-settings.json    # VS Code workspace settings
-```
 
 ---
 
@@ -82,9 +82,9 @@ dotfiles/
 
 ---
 
-## 📦 Required Packages
+## 📦 Required Packages (Arch Linux)
 
-To replicate this environment on Arch Linux:
+To replicate this environment:
 
 ```bash
 # Core & Desktop
@@ -102,18 +102,14 @@ yay -S awww-git vicinae-bin
 
 ---
 
-## 🚀 Installation / Symlinking
+## 🚀 Installation (Arch Linux)
 
-You can clone this repository to your home directory:
+Clone the repository and apply the `arch_linux` files:
 
 ```bash
 git clone git@github.com:realgrando/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-```
+cd ~/dotfiles/arch_linux
 
-Copy or symlink the configs to your `$HOME`:
-
-```bash
 # Copy config directories
 cp -r .config/* ~/.config/
 cp -r .local/bin/* ~/.local/bin/
